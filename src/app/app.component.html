@@ -1,0 +1,15 @@
+<h1 class="title">App-Main</h1>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/home" routerLinkActive="active">Home</a>
+    <a class="navbar-brand" routerLink="/form" routerLinkActive="active">Form</a>
+    <a class="navbar-brand" routerLink="/outlet" routerLinkActive="active">Outlet</a>
+    <a class="navbar-brand" routerLink="/edit" routerLinkActive="active">Edit</a>
+    <a class="navbar-brand" routerLink="/chat" routerLinkActive="active">Chat</a>
+  </nav>
+
+  <div>
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+  </div>
+  <router-outlet name="popup"></router-outlet>
+</div>

@@ -1,0 +1,29 @@
+<h1>Change Info</h1>
+<div >
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="password">Old Password</label>
+            <input type="password" class="form-control" id="opassword" placeholder="Password">
+          </div>
+      <div class="form-group col-md-6">
+        <label for="password">New Password</label>
+        <input type="password" class="form-control" id="npassword" placeholder="New Password">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="confirm">Confirm Password</label>
+        <input type="password" class="form-control" id="confirm" placeholder="Confirm Password">
+      <button id="password" type="submit" class="btn btn-primary" (click)="updatePassword($event)">Update Password</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input type="text" class="form-control" id="nuserName" value="{{userName}}">
+      <button id="user" type="submit" class="btn btn-primary" (click)="updateUserName($event)">Update User Name</button>
+    </div>
+    <button id="user" type="submit" class="btn btn-primary" (click)="deleteUser($event)">Update User Name</button>
+    <div class="form-group">
+        <label for="userName">Email</label>
+        <input type="text" class="form-control" id="nemail" value="{{email}}">
+      <button id="email" type="submit" class="btn btn-primary" (click)="updateEmail($event)">Update Email</button>
+    </div>
+  </div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="header">
+      <input placeholder="Your name here" type="text" [(ngModel)]="sender" [ngModelOptions]="{updateOn: 'blur'}">
+  </div>
+  <div *ngIf="!!sender" #viewer class="body">
+    <div class="viewer">
+      <div class="message" *ngFor="let msg of serverMessages" [ngClass]="{'bold': msg.isBroadcast, 'others': !isMine(msg)}">
+        <div class="badge" [style.backgroundColor]="getSenderColor(msg.sender)">{{ getSenderInitials(msg.sender) }}</div>
+        <div class="content" [ngClass]="{'bold': msg.isBroadcast, 'others': !isMine(msg)}">
+          <i *ngIf="msg.isBroadcast" class="small material-icons">account_circle</i>
+          <span>{{ msg.content }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!!sender" class="row">
+    <form (submit)="send()">
+        <input name="clientMessage" placeholder="Write a message" type="text" [(ngModel)]="clientMessage">
+      <button class="btn waves-effect waves-light col s12 m4 l2" type="submit">
+        <i class="medium material-icons">send</i>
+      </button>
+      <!-- <button id="toggle" class="btn waves-effect waves-light col s12 m4 l2" (click)="toggleIsBroadcast()" type="button" [ngClass]="{'enabled': !isBroadcast}">
+        <i class="medium material-icons">phonelink_ring</i>
+      </button> -->
+    </form>
+  </div>
+</div>
+
